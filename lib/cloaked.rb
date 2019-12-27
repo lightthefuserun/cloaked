@@ -44,17 +44,19 @@ module Cloaked
   def cloak_field(field_name: nil, size: DEFAULT_SIZE, prefix: '', force: false, method: :url_safe)
     return send(field_name) if send(field_name).present? && !force
 
-    loop do
-      value = case method
-              when :uuid then SecureRandom.uuid
-              when :hex then SecureRandom.hex(size)
-              when :url_safe then SecureRandom.urlsafe_base64(size)
-              else raise InvalidMethod
-              end
+    cloaked_value = prefix + value(method, size)
 
-      cloaked_value = prefix + value
+    return send("#{field_name}=", cloaked_value) unless self.class.exists?(field_name)
+  end
 
-      return send("#{field_name}=", cloaked_value) unless self.class.exists?(field_name)
+  private
+
+  def value(method, size)
+    case method
+    when :uuid then SecureRandom.uuid
+    when :hex then SecureRandom.hex(size)
+    when :url_safe then SecureRandom.urlsafe_base64(size)
+    else raise InvalidMethod
     end
   end
 end
