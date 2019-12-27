@@ -1,0 +1,80 @@
+require:
+  - rubocop-performance
+  - rubocop-rspec
+
+# Max line length is changed from default 80
+Metrics/LineLength:
+  Max: 120
+  IgnoredPatterns: ['(\A|\s)#']
+  Exclude:
+    - - '**/*.gemspec'
+
+# Max class definition is changed from default 100
+Metrics/ClassLength:
+  Max: 200
+
+Metrics/MethodLength:
+  Max: 15
+
+# Exclude block length maximum on specs
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - '**/*.gemspec'
+
+# Class top level documentation
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+  AutoCorrect: true
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/EvalWithLocation:
+  Enabled: false
+
+Style/StructInheritance:
+  Enabled: false
+
+Layout/ExtraSpacing:
+  Enabled: false
+
+Layout/SpaceAroundOperators:
+  Enabled: false
+
+# assignment branch condition size
+Metrics/AbcSize:
+  Enabled: false
+
+RSpec/HookArgument:
+  Enabled: false
+
+RSpec/NamedSubject:
+    Enabled: false
+
+RSpec/MultipleExpectations:
+  Max: 2
+
+RSpec/InstanceVariable:
+  Enabled: false
+
+RSpec/FilePath:
+  Enabled: false
+
+FactoryBot/CreateList:
+  Enabled: false
+
+Style/ModuleFunction:
+  Enabled: false
+
+Style/RescueStandardError:
+  Enabled: false
+
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+
+Style/DoubleNegation:
+  Enabled: false

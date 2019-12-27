@@ -54,9 +54,7 @@ module Cloaked
 
       cloaked_value = prefix + value
 
-      unless self.class.exists?(field_name)
-        return send("#{field_name}=", cloaked_value)
-      end
+      return send("#{field_name}=", cloaked_value) unless self.class.exists?(field_name)
     end
   end
 end
