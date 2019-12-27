@@ -78,7 +78,7 @@ Only applies to `:base64` and `hex`. Note that in the latter case, the length of
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/colochousing/cloaked. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/lightthefuserun/cloaked. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
