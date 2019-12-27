@@ -1,6 +1,7 @@
 # Cloaked
 
 [![Build Status](https://secure.travis-ci.org/lightthefuserun/cloaked.svg?branch=master)](https://travis-ci.org/lightthefuserun/cloaked)
+[![Code Climate](https://codeclimate.com/github/lightthefuserun/cloaked.svg)](https://codeclimate.com/github/lightthefuserun/cloaked)
 
 Cloaked provides a simple mechanism to help obfuscate ActiveRecord ids and/or other database attributes by generating public keys that can be used and made publicly visible.
 
