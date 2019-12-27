@@ -2,7 +2,8 @@ PATH
   remote: .
   specs:
     cloaked (0.1.0)
-      activemodel (>= 5)
+      activerecord (>= 6)
+      sqlite3
 
 GEM
   remote: https://rubygems.org/
@@ -24,6 +25,7 @@ GEM
     byebug (11.0.1)
     coderay (1.1.2)
     concurrent-ruby (1.1.5)
+    database_cleaner (1.7.0)
     diff-lcs (1.3)
     docile (1.3.2)
     i18n (1.7.0)
@@ -76,6 +78,7 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
+    sqlite3 (1.4.2)
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
@@ -89,6 +92,7 @@ DEPENDENCIES
   activerecord (~> 6.0.0)
   bundler (~> 1.17)
   cloaked!
+  database_cleaner
   launchy (~> 2.3)
   pry
   pry-byebug
@@ -99,6 +103,7 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rspec
   simplecov
+  sqlite3
 
 BUNDLED WITH
    1.17.2
