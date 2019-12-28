@@ -14,15 +14,50 @@ ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: ':memory:'
 ActiveRecord::Schema.define(version: 1) do
   create_table :posts do |t|
     t.string :public_id, index: true
+    t.string :public_thread_id
 
     t.timestamps
   end
 end
 
-class Post < ActiveRecord::Base
+class BasePost < ActiveRecord::Base
+  self.table_name = 'posts'
+end
+
+class PostWithDefaultOptions < BasePost
   include Cloaked
 
   with_cloaked_keys :public_id
+end
+
+class PostWithHexOption < BasePost
+  include Cloaked
+
+  with_cloaked_keys :public_id, method: :hex
+end
+
+class PostWithUuidOption < BasePost
+  include Cloaked
+
+  with_cloaked_keys :public_id, method: :uuid
+end
+
+class PostWithPrefixOption < BasePost
+  include Cloaked
+
+  with_cloaked_keys :public_id, prefix: 'CLK.'
+end
+
+class PostWithSizeOption < BasePost
+  include Cloaked
+
+  with_cloaked_keys :public_id, method: :hex, size: 16
+end
+
+class PostWithArrayOfKeys < BasePost
+  include Cloaked
+
+  with_cloaked_keys :public_id, :public_thread_id, method: :uuid
 end
 
 RSpec.configure do |config|

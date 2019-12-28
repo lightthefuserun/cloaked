@@ -18,7 +18,6 @@ group :test do
   gem 'rspec'
   gem 'rspec-mocks'
   gem 'rubocop'
-  gem 'rubocop-performance'
   gem 'rubocop-rspec'
   gem 'simplecov', require: false
 end

@@ -1,5 +1,4 @@
 require:
-  - rubocop-performance
   - rubocop-rspec
 
 # Max line length is changed from default 80
@@ -21,6 +20,7 @@ Metrics/BlockLength:
   Exclude:
     - 'Rakefile'
     - '**/*.gemspec'
+    - 'spec/*.rb'
 
 # Class top level documentation
 Style/Documentation:
