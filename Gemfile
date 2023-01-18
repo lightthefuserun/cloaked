@@ -5,7 +5,7 @@ gemspec name: 'cloaked'
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
-gem 'activerecord', '~> 6.0.0'
+gem 'activerecord', '~> 7.0.4'
 gem 'sqlite3'
 
 group :development do
